@@ -13,31 +13,47 @@ html {
 
 body {
     margin: 0;
-    padding: 20px;
+    padding: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* رفع المحتوى للأعلى بدلاً من المنتصف العمودي */
 }
 
 h1 {
-    text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.8);
+    text-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.9);
     font-size: 25px;
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: 'Orbitron', sans-serif;
 }
 
+/* شريط الرسائل شفاف بدون مربع خلفية يغطي الشعار */
 h1#msgs {
     font-size: 22px;
     color: #ffd700;
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 80%;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 15px auto;
+    padding: 10px 20px;
+    max-width: 90%;
+    background: rgba(0, 0, 0, 0.6); /* خلفية داكنة خفيفة للنص فقط */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.4);
     font-family: 'Rajdhani', sans-serif;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.red-status {
+    color: #ff3333 !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 12px rgba(255, 51, 51, 0.9) !important;
+    letter-spacing: 1px;
+}
+
+.gold-status {
+    color: #ffd700 !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.8) !important;
+    letter-spacing: 1px;
 }
 
 a {
@@ -48,52 +64,21 @@ a {
 hr {
     border: none;
     height: 2px;
-    background: linear-gradient(to right, transparent, #4a9eff, transparent);
-    margin: 20px auto;
-    width: 80%;
+    background: linear-gradient(to right, transparent, #ff3333, transparent);
+    margin: 15px auto;
+    width: 60%;
 }
 
-#progress {
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
+/* إلغاء المربع البلوري الكبير لتوضيح الخلفية */
 #menu {
     display: block;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-#crypto {
-    display: none;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#tools {
-    display: none;
-}
-
-#lnx {
-    display: none;
-}
-
-#mods {
-    display: none;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto 0 auto; /* رفع الكود للأعلى */
+    padding: 10px;
+    background: transparent; /* إزالة البلور والخلفية الشفافة */
+    border: none;
+    backdrop-filter: none;
 }
 
 .btn {
@@ -105,58 +90,46 @@ hr {
     text-align: center;
     font-size: 17px;
     font-weight: 600;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 8px 5px;
     border: none;
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     font-family: 'Rajdhani', sans-serif;
 }
 
 .btn:hover {
     background: linear-gradient(145deg, #0073e6, #005bb5);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 105, 217, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 105, 217, 0.6);
 }
 
-.btn-onln {
-    background: linear-gradient(145deg, #2d6a4f, #1b4332);
-}
-
-.btn-onln:hover {
-    background: linear-gradient(145deg, #40916c, #2d6a4f);
-}
-
-/* تنسيق خاص للعنوان */
 .title-container {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .main-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 900;
-    line-height: 1.4;
+    line-height: 1.2;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.name-mustafa {
+.name-powerstore {
     display: block;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 900;
     background: linear-gradient(90deg, #ffd700, #ffaa00, #ffd700, #ffec80, #ffd700);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: goldShine 3s linear infinite;
-    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
-    letter-spacing: 5px;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.9));
+    letter-spacing: 4px;
 }
 
 @keyframes goldShine {
@@ -165,88 +138,60 @@ hr {
 
 .ps4-title {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #00bfff;
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.8), 0 0 30px rgba(0, 191, 255, 0.4);
-    margin: 10px 10px;
-    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.9), 0 0 5px #000;
+    margin: 5px 8px;
+    letter-spacing: 3px;
 }
 
 .ps5-title {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #ff4757;
-    text-shadow: 0 0 15px rgba(255, 71, 87, 0.8), 0 0 30px rgba(255, 71, 87, 0.4);
-    margin: 10px 10px;
-    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(255, 71, 87, 0.9), 0 0 5px #000;
+    margin: 5px 8px;
+    letter-spacing: 3px;
 }
 
 .subtitle {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.2rem;
-    color: #aaa;
-    letter-spacing: 6px;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 2px 4px #000;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: 600;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .version-badge {
     display: inline-block;
     background: linear-gradient(135deg, #ffd700, #ff6b6b);
     color: #1a1a1a;
-    padding: 8px 25px;
+    padding: 6px 20px;
     border-radius: 30px;
     font-weight: 800;
-    font-size: 1rem;
-    margin: 15px 0 25px;
-    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    font-size: 0.95rem;
+    margin: 5px 0 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     letter-spacing: 2px;
     text-transform: uppercase;
     font-family: 'Orbitron', sans-serif;
 }
 
-/* الفوتر */
-.credit {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: #ddd;
-    font-weight: 500;
-}
-
-.credit-link {
-    background: linear-gradient(90deg, #ffd700, #ffaa00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.3rem;
-}
-
 .thanks {
-    font-size: 0.95rem;
-    color: #888;
-    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #ccc;
+    text-shadow: 0 1px 3px #000;
+    margin-top: 5px;
     letter-spacing: 1px;
 }
 
-/* استجابة للموبايل */
 @media (max-width: 600px) {
-    .btn {
-        width: 90%;
-    }
-    
-    .main-title {
-        font-size: 1.8rem;
-    }
-    
-    .name-Powerstore {
-        font-size: 2.5rem;
-    }
-    
-    .ps4-title, .ps5-title {
-        font-size: 1.6rem;
-    }
+    .btn { width: 90%; }
+    .main-title { font-size: 1.6rem; }
+    .name-powerstore { font-size: 2.2rem; }
 }
